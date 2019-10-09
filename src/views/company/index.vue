@@ -1,9 +1,19 @@
 <template>
-  <div>234567890</div>
+  <div>
+    <search />
+    <showtable />
+  </div>
 </template>
 
 <script>
-export default {}
+import Showtable from './table.vue'
+import Search from './search.vue'
+export default {
+  components: {
+    Showtable,
+    Search
+  }
+}
 </script>
 
 <style lang="scss" scoped>

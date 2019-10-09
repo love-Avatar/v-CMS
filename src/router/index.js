@@ -86,7 +86,7 @@ export const constantRoutes = [
         path: 'school',
         component: () => import('@/views/company/index'),
         name: 'school',
-        meta: { title: '企业家法学院', icon: 'dashboard', affix: true },
+        // meta: { title: '企业家法学院', icon: 'dashboard', affix: true },
         children: [
           {
             path: 'index',
