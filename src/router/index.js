@@ -73,16 +73,44 @@ export const constantRoutes = [
   {
     path: '/',
     component: Layout,
-    redirect: '/dashboard',
+    redirect: '/company'
+  },
+  // 企业家法学院
+  {
+    path: '/company',
+    component: Layout,
+    redirect: '/company/school',
+    meta: { title: '企业家法学院', icon: 'dashboard', affix: true },
     children: [
       {
-        path: 'dashboard',
-        component: () => import('@/views/dashboard/index'),
-        name: 'Dashboard',
-        meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+        path: 'school',
+        component: () => import('@/views/company/index'),
+        name: 'school',
+        meta: { title: '企业家法学院', icon: 'dashboard', affix: true },
+        children: [
+          {
+            path: 'index',
+            component: () => import('@/views/company/index'),
+            name: 'company/index',
+            meta: { title: '我的企业邀请函', icon: '', affix: true }
+          }
+        ]
       }
     ]
   },
+  // {
+  //   path: '/dashboard',
+  //   component: Layout,
+  //   redirect: '/dashboard',
+  //   children: [
+  //     {
+  //       path: 'dashboard',
+  //       component: () => import('@/views/dashboard/index'),
+  //       name: 'Dashboard',
+  //       meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+  //     }
+  //   ]
+  // },
   {
     path: '/documentation',
     component: Layout,
